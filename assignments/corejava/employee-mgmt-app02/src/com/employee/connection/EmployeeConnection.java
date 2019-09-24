@@ -129,7 +129,7 @@ public class EmployeeConnection{
 		ResultSet rs =null;
 		String select = "SELECT * FROM employee";
 		pstmt =conn.createStatement();
-		FileWriter writer = new FileWriter("C:\\Users\\PiyushDarshan\\Documents\\output2.txt");
+		FileWriter writer = new FileWriter("C:\\Users\\Ragni\\Documents\\output.txt");
 		rs = pstmt.executeQuery(select);	
 		while (rs.next()) {
 			int id = rs.getInt("id");
