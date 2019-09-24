@@ -3,7 +3,6 @@ package com.examples.empapp.controller;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,19 +13,16 @@ import com.examples.empapp.model.Employee;
 import com.examples.empapp.service.EmployeeService;
 
 /**
- * Servlet implementation class EmployeeController
+ * Servlet implementation class ViewEmployeeByIdController
  */
-@WebServlet("/EmployeeController")
-public class AddEmployeeController extends HttpServlet implements Servlet {
-	
-	
-	
+@WebServlet("/ViewEmployeeByIdController")
+public class ViewEmployeeByIdController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddEmployeeController() {
+    public ViewEmployeeByIdController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,35 +40,16 @@ public class AddEmployeeController extends HttpServlet implements Servlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		doGet(request, response);
+		doGet(request, response);
 		
+		int id = Integer.parseInt(request.getParameter("empid"));
 		Employee e = new Employee();
 		EmployeeService eSer = new EmployeeService();
 		
-		
-		int id =10;
-		String name = request.getParameter("empname");
-		String designation = request.getParameter("empdesig");
-		String country = request.getParameter("empcountry");
-//		
-		System.out.println(id);
-		System.out.println(name);
-		System.out.println(designation);
-		System.out.println(country);
-		
-//		e.setId(id);
-		e.setName(name);
-		e.setDesignation(designation);
-		e.setCountry(country);
-		
-		eSer.addEmployee(e);
-		
-		
-		RequestDispatcher rd = request.getRequestDispatcher("listEmployees.do");
+		e=eSer.viewEmployee(id);
+		request.setAttribute("employee",e);
+		RequestDispatcher rd = request.getRequestDispatcher("ViewEmployeeById.jsp");
 		rd.forward(request, response);
-		
-		
-	
 	}
 
 }

@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Employee Management App</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h2> Welcome to Employee Management App! </h2>
-	<a href="listEmployees.do">View Employees</a>
+
 </body>
 </html>

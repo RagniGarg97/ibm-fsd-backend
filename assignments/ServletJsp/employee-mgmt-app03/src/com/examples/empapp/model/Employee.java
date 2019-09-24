@@ -1,77 +1,63 @@
 package com.examples.empapp.model;
 
-/**
- * Models employee object
- */
+
 public class Employee {
 
-	private int empId;
+
+
+
+	private int id;
 	private String name;
-	private int age;
-	private String department;
 	private String designation;
+//	private String department;
 	private String country;
 	
-	public Employee()
-	{
+	
+	public void setId(int id){
+		this.id=id;
 		
 	}
 	
-	public Employee(int empId, String name, int age, String department, String designation, String country)
-	{
-		this.empId = empId;
-		this.name = name;
-		this.age = age;
-		this.department = department;
-		this.designation = designation;
-		this.country = country;
+	public void setName(String  name){
+		this.name=name;
+		
 	}
-
-	public int getEmpId() {
-		return empId;
+	
+	
+	public void setDesignation(String designation){
+		this.designation=designation;
+		
 	}
-
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	
+	
+	public void setCountry(String country){
+		this.country=country;
+		
 	}
-
-	public String getName() {
+	
+	
+	
+	public int getId(){
+		return id;
+		
+	}
+	
+	public String getName(){
 		return name;
+		
 	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public String getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(String department) {
-		this.department = department;
-	}
-
-	public String getDesignation() {
+	
+	
+	public String getDesignation(){
 		return designation;
+		
 	}
-
-	public void setDesignation(String designation) {
-		this.designation = designation;
-	}
-
-	public String getCountry() {
+	
+	
+	public String getCountry(){
 		return country;
+		
 	}
-
-	public void setCountry(String country) {
-		this.country = country;
+	
+	
 	}
-}
