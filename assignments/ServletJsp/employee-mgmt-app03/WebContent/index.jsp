@@ -6,16 +6,20 @@
 <meta charset="ISO-8859-1">
 <title>Index</title>
 
-
+<style type="text/css">
+body{
+background-color:beige;
+}
+</style>
 </head>
 <body>
 
 <h1>Welcome to employee Management app</h1>
-
-<a href = "AddEmployee.jsp">Add Employee</a>
-<a href = "ViewEmployee.jsp">View Employee</a>
-<a href = "UpdateEmployee.jsp">Update Employee</a>
-<a href = "DeleteEmployee.jsp">Delete Employee</a>
+<br><br>
+<a href = "AddEmployee.jsp">ADD EMPLOYEE</a><br><br>
+<a href = "ViewEmployee.jsp">VIEW EMPLOYEE</a><br><br>
+<a href = "UpdateEmployee.jsp">UPDATE EMPLOYEE</a><br><br>
+<a href = "DeleteEmployee.jsp">DELETE EMPLOYEE</a>
 
 </body>
 </html>
