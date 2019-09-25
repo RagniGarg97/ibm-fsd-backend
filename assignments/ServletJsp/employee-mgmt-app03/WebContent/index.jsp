@@ -5,21 +5,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Index</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<style type="text/css">
-body{
-background-color:beige;
-}
-</style>
 </head>
+<style>
+div{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+</style>
 <body>
 
+<div>
 <h1>Welcome to employee Management app</h1>
-<br><br>
-<a href = "AddEmployee.jsp">ADD EMPLOYEE</a><br><br>
-<a href = "ViewEmployee.jsp">VIEW EMPLOYEE</a><br><br>
-<a href = "UpdateEmployee.jsp">UPDATE EMPLOYEE</a><br><br>
-<a href = "DeleteEmployee.jsp">DELETE EMPLOYEE</a>
 
+<a href = "addEmployee.jsp">Add Employee</a><br>
+<a href = "viewEmployee.jsp">View Employee</a><br>
+<a href = "updateEmployee.jsp">Update Employee</a><br>
+<a href = "deleteEmployee.jsp">Delete Employee</a><br>
+<form method="POST" action="listEmployees.do"><input type="submit" value="View All Employees"></form>
+</div>
 </body>
 </html>

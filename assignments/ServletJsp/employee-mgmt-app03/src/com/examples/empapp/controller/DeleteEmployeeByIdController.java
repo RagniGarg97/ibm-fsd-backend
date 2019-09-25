@@ -1,6 +1,6 @@
 package com.examples.empapp.controller;
+
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,27 +12,26 @@ import javax.servlet.http.HttpServletResponse;
 import com.examples.empapp.model.Employee;
 import com.examples.empapp.service.EmployeeService;
 
-
 /**
- * Servlet implementation class ListEmpolyeeController
+ * Servlet implementation class DeleteEmployeeByIdController
  */
-@WebServlet("/listEmployees.do")
-public class ListEmpolyeeController extends HttpServlet {
+@WebServlet("/DeleteEmployeeByIdController")
+public class DeleteEmployeeByIdController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListEmpolyeeController() {
+    public DeleteEmployeeByIdController() {
         super();
-        
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -40,18 +39,20 @@ public class ListEmpolyeeController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
 		doGet(request, response);
 		
-		EmployeeService eSer=new EmployeeService();
+		int id = Integer.parseInt(request.getParameter("empid"));
+	
+		EmployeeService eSer = new EmployeeService();
 		
-		ArrayList<Employee> employees = eSer.viewAllEmployee();
 		
-		System.out.println(employees);
+		Employee e=eSer.viewEmployee(id);
+		eSer.deleteEmployee(id);
 		
-		request.setAttribute("empList", employees);
+		request.setAttribute("employee",e);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/viewAllEmployees.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("deletedEmployee.jsp");
 		rd.forward(request, response);
 	}
 
